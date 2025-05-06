@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Timer App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <h1>Random Timers</h1>
+      <button id="addTimer" class="add-timer-btn">Add New Timer</button>
+      <div id="timersContainer" class="timers-container">
+        <!-- Timer template -->
+        <template id="timerTemplate">
+          <div class="timer-container">
+            <h2 class="timer-title-display" style="display: none"></h2>
+            <div class="input-group timer-title-input">
+              <label for="timerTitle">Timer Title (optional):</label>
+              <input type="text" class="timer-title" placeholder="Timer" />
+            </div>
+            <div class="input-group">
+              <label for="timerDuration">Timer Duration (seconds):</label>
+              <input type="number" class="timer-duration" min="1" value="60" />
+            </div>
+            <div class="input-group">
+              <label for="percentageChance">Percentage Chance (0-100):</label>
+              <div class="input-with-button">
+                <input
+                  type="number"
+                  class="percentage-chance"
+                  min="0"
+                  max="100"
+                  value="50"
+                />
+                <button class="randomize-chance" title="Randomize chance">
+                  🎲
+                </button>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="maxNumber">Max Random Number (if triggered):</label>
+              <input type="number" class="max-number" min="1" value="10" />
+            </div>
+            <div class="timer-controls">
+              <button class="start-timer">Start Timer</button>
+              <button class="cancel-timer" disabled>Cancel</button>
+              <button class="remove-timer">Remove</button>
+            </div>
+            <div class="timer-display">00:00</div>
+          </div>
+        </template>
+      </div>
+    </div>
+    <audio id="alertSound" src="alert.mp3"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
